@@ -2,7 +2,6 @@ package com.example.take_home.paging
 
 import androidx.core.net.toUri
 import androidx.paging.ExperimentalPagingApi
-import androidx.paging.LoadState.Loading.endOfPaginationReached
 import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
@@ -45,7 +44,7 @@ class CharacterRemoteMediator(
 
             val characters = response.results
 
-            val endOfPagination = false
+            val endOfPagination = response.info.next == null
 
 
             database.withTransaction {
@@ -55,7 +54,7 @@ class CharacterRemoteMediator(
                 }
 
                 val previousKey = if (page > 1) page - 1 else null
-                val nextKey = if (!endOfPaginationReached) page + 1 else null
+                val nextKey = if (!endOfPagination) page + 1 else null
                 val keys = characters.map {
                     RemoteKeys(
                         id = it.id, prevKey = previousKey,
@@ -66,7 +65,7 @@ class CharacterRemoteMediator(
                 database.characterDao().insertAll(characters)
 
             }
-            return MediatorResult.Success(endOfPaginationReached = endOfPaginationReached)
+            return MediatorResult.Success(endOfPaginationReached = endOfPagination)
 
         } catch (e: IOException) {
             return MediatorResult.Error(e)
@@ -76,8 +75,7 @@ class CharacterRemoteMediator(
     }
 
         private suspend fun getRemoteKeyForFirstItem(state: PagingState<Int, Character>): RemoteKeys? {
-            return state.pages.firstOrNull() { it.data.isNotEmpty() }?.data?.firstOrNull()
-                ?.let { character -> database.remoteKeysDao().remoteKeys(id = character.id) }
+            return state.pages.firstOrNull() { it.data.isNotEmpty() }?.data?.firstOrNull()?.let { character -> database.remoteKeysDao().remoteKeys(id = character.id) }
         }
 
 

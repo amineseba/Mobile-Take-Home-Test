@@ -45,7 +45,7 @@ private val viewModel: CharacterViewModel by viewModels {
         setupSearchBar()
         observePagingData()
         handleLoadStates()
-
+        setupRefresh()
     }
 
     private fun setupRecyclerView() {
@@ -73,6 +73,7 @@ private val viewModel: CharacterViewModel by viewModels {
                 false
             }
         }
+        viewModel.updateSearchQuery(null)
     }
 
     private fun observePagingData() {
@@ -88,6 +89,13 @@ private val viewModel: CharacterViewModel by viewModels {
             val refreshState = loadStates.refresh
             binding.progressBarlist.visibility = if (refreshState is LoadState.Loading) View.VISIBLE else View.GONE
             binding.errorTextView.visibility = if (refreshState is LoadState.Error) View.VISIBLE else View.GONE
+        }
+    }
+
+    private fun setupRefresh(){
+        binding.swipedRefresh.setOnRefreshListener {
+            adapter.refresh()
+            binding.swipedRefresh.isRefreshing = false
         }
     }
 

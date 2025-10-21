@@ -73,15 +73,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="11dp"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/character_image"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_width="380dp"
+                android:layout_height="380dp"
                 android:background="@drawable/edit_text_background"
                 android:elevation="50dp"
                 android:scaleType="centerCrop" />
@@ -131,6 +131,7 @@
                     android:layout_marginStart="9dp"
                     android:padding="7dp"
                     android:gravity="center"
+                    android:layout_gravity="center"
                     android:layout_marginRight="150dp"
                     android:drawableStart="@drawable/character_species"
                     android:drawableTint="@color/white"
@@ -144,7 +145,7 @@
                     android:id="@+id/character_species"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="7dp"
+                    android:layout_gravity="center"
                     android:layout_marginStart="35dp"
                     android:textStyle="bold"
                     android:textSize="19sp"
@@ -167,13 +168,15 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="9dp"
                     android:drawableStart="@drawable/menu_burger"
+                    android:drawableTint="@color/white"
                     android:drawablePadding="7dp"
                     android:padding="7dp"
                     android:gravity="center"
+                    android:layout_gravity="center"
                     android:layout_marginRight="150dp"
                     android:background="@drawable/edit_text_background"
                     android:text="Status: "
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="19sp"/>
 
@@ -182,9 +185,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:layout_gravity="center"
                     android:layout_marginStart="50dp"
                     android:text="Status: "
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="19sp"/>
 

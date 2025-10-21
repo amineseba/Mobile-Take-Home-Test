@@ -28,7 +28,7 @@ class CharacterViewModel(private val database: AppDatabase): ViewModel() {
         .debounce(300) //debounce to avoid rapid API calls
         .flatMapLatest { query ->
             Pager(
-                config = PagingConfig(pageSize = 20, enablePlaceholders = false, prefetchDistance = 5),
+                config = PagingConfig(pageSize = 20, enablePlaceholders = false, prefetchDistance = 4),
                 remoteMediator = CharacterRemoteMediator(query, database),
                 pagingSourceFactory = { database.characterDao().pagingSource()}
             ).flow.cachedIn(viewModelScope)
