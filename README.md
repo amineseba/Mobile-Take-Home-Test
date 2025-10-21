@@ -29,6 +29,7 @@ it leverages modern Android architecture components and follows best practices f
 - Scroll to load more characters (20 per page as it mentionned in the Rick and Morty API documentation and automatically paginated from the Server side),
 - Scroll and the characters list will be Appended by each 20 characters automatically, and you can scroll up and down.
 - you can turn off the internet and scroll down after first usage with internet (data cached).
+- For easy Test the loading and appending characters list at the bottom of the list ( enter in search "mc" and press enter ) and scroll to bottom to view the loading state.
 - Use the search bar (press Enter to submit) to filter by name.
 - Click a character to view details.
 
