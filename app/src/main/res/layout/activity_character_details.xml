@@ -67,129 +67,136 @@
     </RelativeLayout>
 
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="8dp"
-        android:padding="11dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/character_image"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="@drawable/edit_text_background"
-            android:elevation="50dp"
-            android:scaleType="centerCrop" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:text="Name of Character :"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
-
-
-        <TextView
-            android:id="@+id/character_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="8dp"
-            android:padding="20dp"
-            android:background="@drawable/edit_text_background"
-            android:backgroundTint="@color/cyan"
-            android:layout_gravity="center_horizontal"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:text="Mock and morty "/>
+            android:padding="11dp"
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/black"/>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_background"
-            android:backgroundTint="@color/black"
-            android:layout_marginTop="25dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="9dp"
-                android:padding="7dp"
-                android:gravity="center"
-                android:layout_marginRight="150dp"
-                android:drawableStart="@drawable/character_species"
-                android:drawableTint="@color/white"
-                android:drawablePadding="7dp"
+            <ImageView
+                android:id="@+id/character_image"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
                 android:background="@drawable/edit_text_background"
-                android:text="Species: "
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="19sp"/>
+                android:elevation="50dp"
+                android:scaleType="centerCrop" />
+
             <TextView
-                android:id="@+id/character_species"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Name of Character :"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+
+            <TextView
+                android:id="@+id/character_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="7dp"
-                android:layout_marginStart="35dp"
-                android:textStyle="bold"
-                android:textSize="19sp"
-                android:textColor="@color/white"
-                android:text="Species " />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/edit_text_background"
-            android:backgroundTint="@color/green"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="9dp"
-                android:drawableStart="@drawable/menu_burger"
-                android:drawablePadding="7dp"
-                android:padding="7dp"
-                android:gravity="center"
-                android:layout_marginRight="150dp"
+                android:layout_marginTop="8dp"
+                android:padding="20dp"
                 android:background="@drawable/edit_text_background"
-                android:text="Status: "
-                android:textColor="@color/black"
+                android:backgroundTint="@color/cyan"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                android:textSize="19sp"/>
+                android:textColor="@color/white"
+                android:text="Mock and morty "/>
 
-            <TextView
-                android:id="@+id/character_status"
-                android:layout_width="wrap_content"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/black"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="7dp"
-                android:layout_marginStart="50dp"
-                android:text="Status: "
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="19sp"/>
+                android:background="@drawable/edit_text_background"
+                android:backgroundTint="@color/black"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="9dp"
+                    android:padding="7dp"
+                    android:gravity="center"
+                    android:layout_marginRight="150dp"
+                    android:drawableStart="@drawable/character_species"
+                    android:drawableTint="@color/white"
+                    android:drawablePadding="7dp"
+                    android:background="@drawable/edit_text_background"
+                    android:text="Species: "
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="19sp"/>
+                <TextView
+                    android:id="@+id/character_species"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:layout_marginStart="35dp"
+                    android:textStyle="bold"
+                    android:textSize="19sp"
+                    android:textColor="@color/white"
+                    android:text="Species " />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_text_background"
+                android:backgroundTint="@color/green"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="9dp"
+                    android:drawableStart="@drawable/menu_burger"
+                    android:drawablePadding="7dp"
+                    android:padding="7dp"
+                    android:gravity="center"
+                    android:layout_marginRight="150dp"
+                    android:background="@drawable/edit_text_background"
+                    android:text="Status: "
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="19sp"/>
+
+                <TextView
+                    android:id="@+id/character_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:layout_marginStart="50dp"
+                    android:text="Status: "
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="19sp"/>
+
+            </LinearLayout>
+
+
+
 
         </LinearLayout>
 
 
-
-
-        </LinearLayout>
+    </ScrollView>
 
 
 
